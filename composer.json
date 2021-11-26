@@ -1,0 +1,33 @@
+{
+    "name": "guillaumeperes/laravel-breadcrumb",
+    "description": "Provides a tool to manage breadcrumbs with Laravel 5+.",
+    "keywords": ["breadcrumb", "laravel"],
+    "authors": [
+        {
+            "name": "Guillaume Peres",
+            "email": "guillaumeperes10@gmail.com",
+            "role": "Creator"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/config": "~5|~6|~7|~8",
+        "illuminate/support": "~5|~6|~7|~8"
+    },
+    "autoload": {
+        "psr-4": {
+            "GuillaumePeres\\Breadcrumb\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GuillaumePeres\\Breadcrumb\\BreadcrumbServiceProvider"
+            ],
+            "aliases": {
+                "Breadcrumb": "GuillaumePeres\\Breadcrumb\\Facades\\Breadcrumb"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
