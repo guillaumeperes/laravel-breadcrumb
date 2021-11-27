@@ -4,15 +4,23 @@ namespace GuillaumePeres\Breadcrumb;
 
 class Breadcrumb
 {
+    protected $enabled = false;
     protected $breadcrumb = array();
 
     public function add(string $url, string $title)
     {
-        $item = new StdClass();
-        $item->url = $url;
-        $item->title = $title;
+        $this->enable(true);
+        $this->breadcrumb[$url] = $title;
+    }
 
-        $this->breadcrumb[] = $item;
+    public function enable(bool $enabled = true)
+    {
+        $this->enabled = true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->enabled;
     }
 
     public function has()
@@ -22,6 +30,6 @@ class Breadcrumb
 
     public function get()
     {
-
+        return $this->breadcrumb;
     }
 }

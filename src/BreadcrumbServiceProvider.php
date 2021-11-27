@@ -13,7 +13,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
 
     private function registerBreadcrumbClass()
     {
-        $this->app->singleton('Breadcrumb', function($app) {
+        $this->app->singleton('breadcrumb', function($app) {
             return new Breadcrumb();
         });
     }
